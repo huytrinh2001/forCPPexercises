@@ -6,6 +6,6 @@ int main()
     getline(cin, s);
     // string a,b;
     // cin >> a >> b ;
-    toggleCase(s);
+    cout << sumNumStr(s);
     return 0;
 }

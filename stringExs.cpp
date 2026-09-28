@@ -125,3 +125,41 @@ void toggleCase(string s){
         }
     }
 }
+
+// insert dash between 2 odd numbers in a string
+// cách dùng insert (có mở rộng mảng nhưng hàm này làm cho các kí tự đẩy về sau để chèn vào)
+string insertDash1 (string s){
+    if (s.empty()) return "";
+    string res = "";
+    
+    for (size_t i = 0; i < s.length(); i++) {
+        res += s[i];
+        // Nếu ký tự hiện tại và kế tiếp đều là số lẻ, và chưa phải ký tự cuối cùng
+        if (i + 1 < s.length() && (s[i] - '0') % 2 != 0 && (s[i+1] - '0') % 2 != 0) {
+            res += "-";
+        }
+    }
+    return res;
+}
+// cách dùng push_back là phải tạo mới chuỗi rỗng ( tại vì này nó pushback từng char vào đằng sau)
+string insertDash2 (string s){
+    string str = "";
+    for(int i = 0; i < s.length(); i++){
+        str.push_back(s[i]);
+        if ((s[i] -'0') % 2 != 0 && (s[i+1] - '0') % 2 != 0 && i+1 <s.length() ){
+            str.push_back('-');
+        }
+    }
+    return str;
+}
+
+//sum of numbers in a string
+// lấy kí tự số rồi "-" cho kí tự '0' là ra số
+int sumNumStr(string s){
+    int sum = 0;
+    for(int i = 0; i < s.length(); i++){
+        if (s[i] >= '0' && s[i] <= '9')
+        sum += s[i] - '0';
+    }
+    return sum;
+}

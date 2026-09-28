@@ -10,3 +10,6 @@ int countVowels (string s);
 int countWords (string s);
 bool checkOccur (string s, string a, string b);
 void toggleCase (string s);
+string insertDash1(string s);
+string insertDash2(string s);
+int sumNumStr(string s);
