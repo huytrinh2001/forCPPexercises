@@ -13,3 +13,6 @@ void toggleCase (string s);
 string insertDash1(string s);
 string insertDash2(string s);
 int sumNumStr(string s);
+string convertWords(string s);
+string reverseVowel(string s);
+int countPal(string s);

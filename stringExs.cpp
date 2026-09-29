@@ -163,3 +163,62 @@ int sumNumStr(string s){
     }
     return sum;
 }
+
+//convert a non-negative integer to Eng words
+// string convertWords(string s){
+
+// }
+
+// reverse only vowels in a string
+// cách dùng 2 con trỏ , làm gì thì làm con trỏ left trong điều kiện phải là left > right
+bool isVowel( char c ){
+    c = tolower(c);
+    return c == 'a' || c == 'e' || c == 'o' || c == 'u' || c == 'i';
+}
+void swap (int& a, int& b){
+    int temp = a;
+    a = b;
+    b = temp;
+}
+string reverseVowel(string s){
+    int left = 0;
+    int right = s.length()-1;
+    while (left < right){
+        while ( left < right && !isVowel(s[left])){
+            left++;
+        }
+        while ( left < right && !isVowel(s[right])){
+            right--;
+        }
+        if (left < right){
+            swap(s[left], s[right]);
+            left++;
+            right--;
+        }
+    }
+    return s;
+}
+
+//count longest palidrome
+// hàm countPal có thể đổi thành hàm trả về "chuỗi con" chứa palindrome.
+int expandAroundCenter(const string& s, int left, int right){
+    while(left >= 0 && right < s.length() -1 && s[left] == s[right]){
+        left--;
+        right++;
+    }
+    return right - left - 1;
+}
+int countPal(string s){
+    int maxLength = 0;
+    int start = 0;
+    for (int i = 0; i < s.length(); i++){
+        int len1 = expandAroundCenter(s, i, i); // mở rộng từ tâm lẻ
+        int len2 = expandAroundCenter(s, i, i+1); // mở rộng từ tâm lẻ
+        
+        int len = (len1 > len2) ? len1 : len2;
+        start = (len > maxLength) ? i - (len -1)/2 : start;
+        maxLength = (len > maxLength) ? len : maxLength;
+
+    }
+    return maxLength;
+}

@@ -6,6 +6,6 @@ int main()
     getline(cin, s);
     // string a,b;
     // cin >> a >> b ;
-    cout << sumNumStr(s);
+    cout << countPal(s);
     return 0;
 }
