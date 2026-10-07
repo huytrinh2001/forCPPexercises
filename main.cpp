@@ -13,6 +13,10 @@ int main(){
     // cout << secondLargest(arr, n);
     // cout << findKthEle(arr, n);
     // findNumberofArr(arr, n);
-    findNextGreat(arr, n);
+    // findNextGreat(arr, n);
+    // wave_sort(arr, n);
+    // cout << checkSomeEqualLargest(arr, n);
+    countPair(arr, n , 12);
+    
     return 0;
 }

@@ -10,3 +10,8 @@ int secondSmallest(int* a, int n);
 void findGreaterEle(int* a, int n);
 int findMostFreq(int* a, int n);
 void findNextGreat(int* a , int n);
+void wave_sort(int* a, int n);
+int thirdLargest(int* a, int n);
+void find2ndlowest1stLargest(int* a, int n);
+bool checkSomeEqualLargest(int* a, int n);
+void countPair(int* a, int n, int value);
